@@ -1,18 +1,55 @@
 #character {
   position: relative;
   width: 200px;
+  height: 400px;
   margin: 50px auto;
 }
-#character img {
+
+#torso {
   position: absolute;
-  transform-origin: center;
+  left: 50%;
+  top: 150px;
+  transform: translateX(-50%);
+  z-index: 2;
 }
-#controls {
-  text-align: center;
-  margin-bottom: 20px;
+
+#head {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  transform-origin: bottom center;
+  z-index: 3;
 }
-#controls button {
-  margin: 5px;
-  padding: 8px 16px;
-  font-size: 16px;
+
+#left_arm {
+  position: absolute;
+  left: calc(50% - 60px);
+  top: 160px;
+  transform-origin: top right;
+  z-index: 1;
+}
+
+#right_arm {
+  position: absolute;
+  left: calc(50% + 60px);
+  top: 160px;
+  transform-origin: top left;
+  z-index: 1;
+}
+
+#left_leg {
+  position: absolute;
+  left: calc(50% - 30px);
+  top: 350px;
+  transform-origin: top center;
+  z-index: 0;
+}
+
+#right_leg {
+  position: absolute;
+  left: calc(50% + 30px);
+  top: 350px;
+  transform-origin: top center;
+  z-index: 0;
 }
