@@ -7,3 +7,12 @@
   position: absolute;
   transform-origin: center;
 }
+#controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#controls button {
+  margin: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+}
