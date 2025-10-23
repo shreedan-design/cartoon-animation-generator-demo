@@ -1,18 +1,19 @@
-const canvas = document.getElementById('animationCanvas');
-const ctx = canvas.getContext('2d');
-const btn = document.getElementById('animateBtn');
+const app = new PIXI.Application({ width: 800, height: 600, backgroundColor: 0xeeeeee });
+document.getElementById('canvas-container').appendChild(app.view);
 
-btn.addEventListener('click', () => {
-  let x = 0;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const interval = setInterval(() => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
-    ctx.arc(200, 200, 50, 0, Math.PI * 2);
-    ctx.fillStyle = `hsl(${x * 3}, 100%, 50%)`;
-    ctx.fill();
-    ctx.closePath();
-    x++;
-    if (x > 120) clearInterval(interval);
-  }, 50);
+// Load Spine character
+PIXI.Loader.shared.add('hero', 'https://raw.githubusercontent.com/EsotericSoftware/spine-runtimes/4.1/spine-ts/example/assets/spineboy-pro.json')
+.load((loader, resources) => {
+    const hero = new PIXI.spine.Spine(resources.hero.spineData);
+    hero.x = app.screen.width / 2;
+    hero.y = app.screen.height - 50;
+    hero.scale.set(0.5);
+    app.stage.addChild(hero);
+
+    hero.state.setAnimation(0, 'walk', true);
+
+    document.getElementById('jumpBtn').addEventListener('click', () => {
+        hero.state.setAnimation(0, 'jump', false);
+        hero.state.addAnimation(0, 'walk', true, 0);
+    });
 });
