@@ -7,6 +7,12 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="controls">
+  <button onclick="setAction('idle')">Idle</button>
+  <button onclick="setAction('walk')">Walk</button>
+  <button onclick="setAction('jump')">Jump</button>
+</div>
+
 <div id="character">
     <img id="head" src="../assets/head.png" alt="head">
     <img id="torso" src="../assets/torso.png" alt="torso">
@@ -15,6 +21,7 @@
     <img id="left_leg" src="../assets/left_leg.png" alt="left leg">
     <img id="right_leg" src="../assets/right_leg.png" alt="right leg">
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
