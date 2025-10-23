@@ -3,28 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dynamic Character Animation</title>
-<style>
-body { margin:0; background:#eeeeee; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif; }
-button, select { margin:10px; padding:8px 15px; font-size:16px; border-radius:5px; border:none; cursor:pointer; }
-button:hover, select:hover { background:#007bff; color:white; }
-canvas { border:1px solid #333; margin-top:10px; }
-</style>
+<title>Dynamic Character Demo</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>🎨 Dynamic Character Animation Demo</h2>
-<select id="characterSelect">
-  <option value="spineboy">SpineBoy</option>
-  <option value="spine-girl">SpineGirl</option>
-</select>
-<div>
-  <button data-action="walk">Walk</button>
-  <button data-action="jump">Jump</button>
-  <button data-action="dance">Dance</button>
+<div id="character">
+    <img id="head" src="../assets/head.png" alt="head">
+    <img id="torso" src="../assets/torso.png" alt="torso">
+    <img id="left_arm" src="../assets/left_arm.png" alt="left arm">
+    <img id="right_arm" src="../assets/right_arm.png" alt="right arm">
+    <img id="left_leg" src="../assets/left_leg.png" alt="left leg">
+    <img id="right_leg" src="../assets/right_leg.png" alt="right leg">
 </div>
-<div id="canvas-container"></div>
-<script src="https://pixijs.download/release/pixi.min.js"></script>
-<script src="https://pixijs.download/spine/3.1.12/pixi-spine.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
