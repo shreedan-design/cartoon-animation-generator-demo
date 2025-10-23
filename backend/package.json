@@ -1,5 +1,5 @@
 {
-  "name": "dynamic-character-backend",
+  "name": "cartoon-animation-generator-demo",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
